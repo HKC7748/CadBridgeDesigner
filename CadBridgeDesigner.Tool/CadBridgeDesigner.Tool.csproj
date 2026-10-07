@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+        <ProjectGuid>{B2997D8D-4805-4CC6-B479-120FD6B03DFF}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>CadBridgeDesigner.Tool</RootNamespace>
+        <AssemblyName>CadBridgeDesigner.Tool</AssemblyName>
+        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <UseWpf>true</UseWpf>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+        <PlatformTarget>x64</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>..\out\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+        <PlatformTarget>x64</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>..\out\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Include="Bridge\Base\BridgeComponentDiagram.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\TbeamModelingTool.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\View\TbeamAddView.xaml.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\View\TbeamAddViewModel.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\View\TbeamEditView.xaml.cs">
+        <DependentUpon>TbeamEditView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="Bridge\Beam\Tbeam\View\TbeamEditViewModel.cs" />
+      <Compile Include="Bridge\Pier\ColumnPier\View\ColumnPierAddView.xaml.cs" />
+      <Compile Include="Bridge\Pier\ColumnPier\View\ColumnPierAddViewModel.cs" />
+      <Compile Include="Bridge\Pier\ColumnPier\View\ColumnPierEditView.xaml.cs">
+        <DependentUpon>ColumnPierEditView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="Bridge\Pier\ColumnPier\View\ColumnPierEditViewModel.cs" />
+      <Compile Include="Tool\CadTool\ConfigureTool\DimStyleTool.cs" />
+      <Compile Include="Tool\CadTool\ConfigureTool\LayerTool.cs" />
+      <Compile Include="Tool\CadTool\ConfigureTool\LineTypeTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\BlockTableRecordTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\DataBaseTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\DimensionTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\ModifyTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\PolyLineTool.cs" />
+      <Compile Include="Tool\CadTool\EntityTool\SolidTool.cs" />
+      <Compile Include="Tool\CadTool\GeometryTool\CurveTool.cs" />
+      <Compile Include="Tool\CadTool\InteractTool\EditorTool.cs" />
+      <Compile Include="Tool\CadTool\InteractTool\JigTool.cs" />
+      <Compile Include="Tool\CadTool\InteractTool\ViewTool.cs" />
+      <Compile Include="Tool\ExceptionTool.cs" />
+      <Compile Include="Tool\RelayCommand.cs" />
+      <Compile Include="BridgeManager\BridgeManagerModel.cs" />
+      <Compile Include="BridgeManager\BridgeManagerTool.cs" />
+      <Compile Include="BridgeManager\BridgeManagerView.xaml.cs">
+        <DependentUpon>BridgeManagerView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="BridgeManager\BridgeManagerViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\Base\BaseTreeNodeViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\Base\MenuItem.cs" />
+      <Compile Include="BridgeManager\TreeNode\ColumnPier\ColumnPierRootTreeNodeViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\ColumnPier\ColumnPierTreeNodeViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\Instance\InstanceTreeNodeViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\Tbeam\TbeamRootTreeNodeViewModel.cs" />
+      <Compile Include="BridgeManager\TreeNode\Tbeam\TbeamTreeNodeViewModel.cs" />
+      <Compile Include="Bridge\Base\BridgeComponentModel.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\TbeamModel.cs" />
+      <Compile Include="Bridge\Beam\Tbeam\TbeamTool.cs" />
+      <Compile Include="Bridge\BridgeEditViewModel.cs" />
+      <Compile Include="Bridge\BridgeModel.cs" />
+      <Compile Include="Bridge\BridgePierEditView.xaml.cs">
+        <DependentUpon>BridgePierEditView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="Bridge\Pier\ColumnPier\ColumnPierModel.cs" />
+      <Compile Include="Bridge\Pier\ColumnPier\ColumnPierTool.cs" />
+      <Compile Include="CadCommandManager\CadCommandManagerHandler.cs" />
+      <Compile Include="CadCommandManager\CadCommandManagerTool.cs" />
+      <Compile Include="CadEventManager\CadEventManagerHandler.cs" />
+      <Compile Include="CadEventManager\CadEventManagerTool.cs" />
+      <Compile Include="Loger\LogerModel.cs" />
+      <Compile Include="Loger\LogerTool.cs" />
+      <Compile Include="Loger\LogerView.xaml.cs">
+        <DependentUpon>LogerView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="Loger\LogerViewModel.cs" />
+      <Compile Include="Main.cs" />
+      <Compile Include="PropertiesEditor\NullView.xaml.cs">
+        <DependentUpon>NullView.xaml</DependentUpon>
+      </Compile>
+      <Compile Include="PropertiesEditor\PropertiesEditorTool.cs" />
+      <Compile Include="Properties\Annotations.cs" />
+      <Compile Include="Properties\AssemblyInfo.cs" />
+      <Compile Include="TestMethod.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".gitignore" />
+      <Content Include="Properties\IncrementVersion.ps1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="accoremgd">
+        <HintPath>..\..\..\..\..\Learning\modeling\AutoCAD\AutoCAD 2024\accoremgd.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+      <Reference Include="Acdbmgd">
+        <HintPath>..\..\..\..\..\Learning\modeling\AutoCAD\AutoCAD 2024\acdbmgd.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+      <Reference Include="Acmgd">
+        <HintPath>..\..\..\..\..\Learning\modeling\AutoCAD\AutoCAD 2024\acmgd.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+      <Reference Include="PresentationCore" />
+      <Reference Include="PresentationFramework" />
+      <Reference Include="System" />
+      <Reference Include="System.Data" />
+      <Reference Include="System.Drawing" />
+      <Reference Include="System.Windows.Forms" />
+      <Reference Include="System.Xaml" />
+      <Reference Include="System.Xml" />
+      <Reference Include="WindowsBase" />
+      <Reference Include="WindowsFormsIntegration" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\CadBridgeDesigner.Core\CadBridgeDesigner.Core.csproj">
+        <Project>{88e8d4ad-362f-4da6-89d8-9f1e77b0c0d3}</Project>
+        <Name>CadBridgeDesigner.Core</Name>
+          <Private>False</Private>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Include="BridgeManager\BridgeManagerView.xaml" />
+      <Page Include="Bridge\Beam\Tbeam\View\TbeamAddView.xaml" />
+      <Page Include="Bridge\Beam\Tbeam\View\TbeamEditView.xaml" />
+      <Page Include="Bridge\BridgePierEditView.xaml" />
+      <Page Include="Bridge\Pier\ColumnPier\View\ColumnPierAddView.xaml" />
+      <Page Include="Bridge\Pier\ColumnPier\View\ColumnPierEditView.xaml" />
+      <Page Include="Loger\LogerView.xaml" />
+      <Page Include="PropertiesEditor\NullView.xaml" />
+      <Page Include="Styles.xaml" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="IncrementVersion" BeforeTargets="BeforeCompile" Condition="'$(DesignTimeBuild)' != 'true'">
+        <Exec Command="powershell -ExecutionPolicy Bypass -NoProfile -NonInteractive -File &quot;$(MSBuildProjectDirectory)\Properties\IncrementVersion.ps1&quot;" />
+    </Target>
+</Project>

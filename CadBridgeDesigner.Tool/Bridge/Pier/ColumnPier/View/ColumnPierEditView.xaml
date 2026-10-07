@@ -1,0 +1,305 @@
+<UserControl x:Class="CadBridgeDesigner.Tool.Bridge.Pier.ColumnPier.View.ColumnPierEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CadBridgeDesigner.Tool.Bridge.Pier.ColumnPier.View"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="150"
+             d:DataContext="{d:DesignInstance Type=local:ColumnPierEditViewModel, IsDesignTimeCreatable=True}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/CadBridgeDesigner.Tool;component/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="基本信息" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="名称"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.Name}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="里程"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.Mileage}" Grid.Row="2" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="盖梁" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="盖梁长度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.LengthOfPierCap}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="盖梁宽度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.WidthOfPierCap}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="盖梁高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfPierCap}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="倒角长度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.LengthOfPierCapSlope}" Grid.Row="4" Grid.Column="1"/>
+                    <Border Grid.Row="5" Grid.Column="0">
+                        <TextBlock Text="倒角高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfPierCapSlope}" Grid.Row="5" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="抗震挡块" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="挡块长度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.LengthOfShearKey}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="挡块宽度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.WidthOfShearKey}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="挡块高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfShearKey}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="挡块间隙"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.GapOfShearKey}" Grid.Row="4" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="支座" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="支座排数"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.RowOfBearing}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="支座列数"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.ColumnOfBearing}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="支座排间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.RowSpaceOfBearing}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="支座列间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.ColumnSpaceOfBearing}" Grid.Row="4" Grid.Column="1"/>
+                    <Border Grid.Row="5" Grid.Column="0">
+                        <TextBlock Text="垫石长度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.LengthOfBearingPedestal}" Grid.Row="5" Grid.Column="1"/>
+                    <Border Grid.Row="6" Grid.Column="0">
+                        <TextBlock Text="垫石高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfBearingPedestal}" Grid.Row="6" Grid.Column="1"/>
+                    <Border Grid.Row="7" Grid.Column="0">
+                        <TextBlock Text="橡胶垫直径"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.DiameterOfRubberGasket}" Grid.Row="7" Grid.Column="1"/>
+                    <Border Grid.Row="8" Grid.Column="0">
+                        <TextBlock Text="橡胶垫高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfRubberGasket}" Grid.Row="8" Grid.Column="1"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="墩柱" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="墩柱数量"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.NumberOfPierColumn}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="墩柱间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.SpaceOfPierColumn}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="墩柱高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfPierColumn}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="墩柱直径"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.DiameterOfPierColumn}" Grid.Row="4" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="系梁" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="系梁数量"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.NumberOfTieBeam}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="系梁间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.SpaceOfTieBeam}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="系梁宽度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.WidthOfTieBeam}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="系梁高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfTieBeam}" Grid.Row="4" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="承台" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="承台长度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.LengthOfFoundation}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="承台宽度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.WidthOfFoundation}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="承台高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfFoundation}" Grid.Row="3" Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="桩基" TextAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="桩排数"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.RowOfPile}" Grid.Row="1" Grid.Column="1"/>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="桩列数"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.ColumnOfPile}" Grid.Row="2" Grid.Column="1"/>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <TextBlock Text="桩排间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.RowSpaceOfPile}" Grid.Row="3" Grid.Column="1"/>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <TextBlock Text="桩列间距"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.ColumnSpaceOfPile}" Grid.Row="4" Grid.Column="1"/>
+                    <Border Grid.Row="5" Grid.Column="0">
+                        <TextBlock Text="桩直径"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.DiameterOfPile}" Grid.Row="5" Grid.Column="1"/>
+                    <Border Grid.Row="6" Grid.Column="0">
+                        <TextBlock Text="桩高度"/>
+                    </Border>
+                    <TextBox Text="{Binding ColumnPierModel.HeightOfPile}" Grid.Row="6" Grid.Column="1"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

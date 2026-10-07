@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="CadBridgeDesigner.Tool.Loger.LogerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CadBridgeDesigner.Tool.Loger"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=local:LogerViewModel}"
+             d:DesignHeight="500" d:DesignWidth="250">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/CadBridgeDesigner.Tool;component/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <TextBox x:Name="LogTextBox"
+                 Text="{Binding LogerModel.LogMessages, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Hidden"
+                 HorizontalScrollBarVisibility="Disabled"
+                 AcceptsReturn="False"
+                 TextChanged="OnTextChanged">
+        </TextBox>
+    </Grid>
+</UserControl>

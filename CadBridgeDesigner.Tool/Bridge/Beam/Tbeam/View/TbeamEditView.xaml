@@ -1,0 +1,234 @@
+﻿<UserControl x:Class="CadBridgeDesigner.Tool.Bridge.Beam.Tbeam.View.TbeamEditView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CadBridgeDesigner.Tool.Bridge.Beam.Tbeam"
+        xmlns:view="clr-namespace:CadBridgeDesigner.Tool.Bridge.Beam.Tbeam.View"
+        mc:Ignorable="d"
+        d:DesignHeight="500" d:DesignWidth="150"
+        d:DataContext="{d:DesignInstance Type=view:TbeamEditViewModel, IsDesignTimeCreatable=True}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/CadBridgeDesigner.Tool;component/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 左列 -->
+                <StackPanel Grid.Column="0">
+                    <!-- 基本信息 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="基本信息" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="名称"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.Name}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="里程"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.Mileage}" Grid.Row="2" Grid.Column="1"/>
+                    </Grid>
+                    <!-- 总体尺寸 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="总体尺寸" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="跨径"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.SpanLength}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="梁高"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.Height}" Grid.Row="2" Grid.Column="1"/>
+                        <Border Grid.Row="3" Grid.Column="0">
+                            <TextBlock Text="单端梁端间隙"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.BeamEndGap}" Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
+                    <!-- 梁体 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="梁体" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="梁片数"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.NumberOfTbeam}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="变截面起点"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.DistanceOfStartOfCrossSection}" Grid.Row="2" Grid.Column="1"/>
+                        <Border Grid.Row="3" Grid.Column="0">
+                            <TextBlock Text="变截面终点"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.DistanceOfEndOfCrossSection}" Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
+                    <!-- 横隔板 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="横隔板" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="横隔板间距"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.SpaceOfDiaphragm}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="横隔板厚度"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.ThicknessOfDiaphragm}" Grid.Row="2" Grid.Column="1"/>
+                        <Border Grid.Row="3" Grid.Column="0">
+                            <TextBlock Text="中横隔板数"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.NumberOfMiddleDiaphragm}" Grid.Row="3" Grid.Column="1"/>
+                        <Border Grid.Row="4" Grid.Column="0">
+                            <TextBlock Text="端横隔板距离"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.DistanceOfEndDiaphragm}" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                </StackPanel>
+                <!-- 右列 -->
+                <StackPanel Grid.Column="1">
+                    
+                    <!-- 翼缘板 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="翼缘板" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="翼缘板宽"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.WidthOfFlange}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="翼缘板厚"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.HeightOfFlange}" Grid.Row="2" Grid.Column="1"/>
+                        <Border Grid.Row="3" Grid.Column="0">
+                            <TextBlock Text="翼缘板承托宽"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.WidthOfFlangeHaunch}" Grid.Row="3" Grid.Column="1"/>
+                        <Border Grid.Row="4" Grid.Column="0">
+                            <TextBlock Text="翼缘板承托高"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.HeightOfFlangeHaunch}" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                    <!-- 腹板 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="腹板" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="腹板厚度"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.WidthOfWeb}" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                    <!-- 马蹄 -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <TextBlock Text="马蹄" TextAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <TextBlock Text="马蹄宽度"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.WidthOfButtonBulb}" Grid.Row="1" Grid.Column="1"/>
+                        <Border Grid.Row="2" Grid.Column="0">
+                            <TextBlock Text="马蹄高度"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.HeightOfButtonBulb}" Grid.Row="2" Grid.Column="1"/>
+                        <Border Grid.Row="3" Grid.Column="0">
+                            <TextBlock Text="马蹄斜坡高"/>
+                        </Border>
+                        <TextBox Text="{Binding TbeamModel.HeightOfButtonBulbSlope}" Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
